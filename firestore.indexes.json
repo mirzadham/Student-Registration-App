@@ -1,0 +1,29 @@
+{
+    "indexes": [
+        {
+            "collectionGroup": "enrollments",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "studentId",
+                    "order": "ASCENDING"
+                },
+                {
+                    "fieldPath": "enrolledAt",
+                    "order": "DESCENDING"
+                }
+            ]
+        },
+        {
+            "collectionGroup": "courses",
+            "queryScope": "COLLECTION",
+            "fields": [
+                {
+                    "fieldPath": "code",
+                    "order": "ASCENDING"
+                }
+            ]
+        }
+    ],
+    "fieldOverrides": []
+}

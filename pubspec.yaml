@@ -1,0 +1,45 @@
+name: student_registration_app
+description: "Student Registration Mobile Application with MVVM Architecture"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.10.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  
+  # Firebase
+  firebase_core: ^3.9.0
+  firebase_auth: ^5.4.1
+  cloud_firestore: ^5.6.1
+  
+  # State Management & DI
+  provider: ^6.1.2
+  
+  # HTTP & Networking
+  http: ^1.2.2
+  
+  # Encryption
+  encrypt: ^5.0.3
+  pointycastle: ^3.9.1
+  
+  # Secure Storage
+  flutter_secure_storage: ^9.2.3
+  
+  # UI Helpers
+  google_fonts: ^6.2.1
+  
+  # Form Validation
+  email_validator: ^3.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
