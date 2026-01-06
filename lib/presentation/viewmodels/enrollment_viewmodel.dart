@@ -107,12 +107,13 @@ class EnrollmentViewModel extends ChangeNotifier {
     notifyListeners();
 
     try {
-      await _courseRepository.enrollInCourse(courseId);
+      // Get the actual enrollment ID from the server response
+      final enrollmentId = await _courseRepository.enrollInCourse(courseId);
 
-      // Find the course and create a local enrollment
+      // Find the course and create a local enrollment with the real ID
       final course = _courses.firstWhere((c) => c.id == courseId);
       final enrollment = EnrollmentModel(
-        id: '${DateTime.now().millisecondsSinceEpoch}',
+        id: enrollmentId, // Use the actual enrollment ID from the server
         studentId: '',
         courseId: courseId,
         courseName: course.name,

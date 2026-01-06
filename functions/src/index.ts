@@ -32,8 +32,9 @@ app.use("/students", validateToken, studentsRouter);
 app.use("/courses", validateToken, coursesRouter);
 app.use("/enrollments", validateToken, enrollmentsRouter);
 
-// Public registration endpoint
-app.post("/register", studentsRouter);
+// Public registration endpoint - mounts students router at /register
+// This allows POST /register to hit the router's POST / handler
+app.use("/register", studentsRouter);
 
 // Error handling middleware
 app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
@@ -46,4 +47,7 @@ app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
 
 // Export the Express app as a Firebase Cloud Function
 export const api = onRequest(app);
+
+// Export seed function for database initialization
+export { seedCourses } from "./seed.js";
 
